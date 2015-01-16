@@ -21,6 +21,7 @@ public class PrivateKey extends Key{
 	
 	public void print(){
 		System.out.println(exponent);
+		
 	}
 
 }
