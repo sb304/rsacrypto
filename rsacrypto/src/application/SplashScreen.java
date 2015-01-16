@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import keygeneration.KeyGenerator;
+import keygeneration.KeyPair;
 
 public class SplashScreen {
 	private Stage myStage; 
@@ -21,6 +22,8 @@ public class SplashScreen {
 	
 	public void show(){
 		KeyGenerator keyG = new KeyGenerator();
+		KeyPair kp = keyG.generateKeyPair(); 
+		kp.print();
 		myStage.show();
 		
 	}

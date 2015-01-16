@@ -15,12 +15,13 @@ public class KeyGenerator {
 		myRandom = new Random();
 	}
 	
-	public void generateKeyPair(){
+	public KeyPair generateKeyPair(){
 		myFirstPrime = new BigInteger(1024, 100, myRandom);
 		mySecondPrime = new BigInteger(1024, 100, myRandom);
 		number = myFirstPrime.multiply(mySecondPrime);
 		totientN = (myFirstPrime.subtract(BigInteger.ONE)).multiply(mySecondPrime.subtract(BigInteger.ONE));
 		KeyPair kp = new KeyPair(totientN, number);
+		return kp; 
 		
 	}
 	

@@ -13,12 +13,15 @@ public class KeyPair {
 		totient = t; 
 		number = n; 
 		myPublicKey = new PublicKey(totient, number);
-		
-		
+		myPrivateKey = new PrivateKey(totient, number, myPublicKey);
+			
 	}
 	
-	private static void generatePublicKey(BigInteger t){
-		
+	public void print(){
+		myPublicKey.print();
+		myPrivateKey.print();
 	}
+	
+	
 	
 }
