@@ -21,6 +21,7 @@ public class KeyGenerator {
 		number = myFirstPrime.multiply(mySecondPrime);
 		totientN = (myFirstPrime.subtract(BigInteger.ONE)).multiply(mySecondPrime.subtract(BigInteger.ONE));
 		KeyPair kp = new KeyPair(totientN, number);
+		kp.print();
 		return kp; 
 		
 	}

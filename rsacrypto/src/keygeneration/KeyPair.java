@@ -22,6 +22,10 @@ public class KeyPair {
 		myPrivateKey.print();
 	}
 	
+	public String getPublicExponent(){
+		return myPublicKey.getExponent().toString();
+	}
+	
 	
 	
 }

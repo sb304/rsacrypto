@@ -1,6 +1,7 @@
 package application;
 
 
+import messageencryption.EncryptionModel;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -29,15 +30,13 @@ public class SplashScreen {
 		Button generate = new Button("Generate Keys"); 
 		generate.setOnAction(EventHandler -> generate());
 		Button encrypt = new Button("Encrypt Message");
+		encrypt.setOnAction(EventHandler -> encrypt()); 
 		Button decrypt = new Button("Decrypt Message");
 		vbox.getChildren().addAll(generate, encrypt, decrypt);
 		myPane.setCenter(vbox);
 	}
 	
 	public void show(){
-		KeyGenerator keyG = new KeyGenerator();
-		KeyPair kp = keyG.generateKeyPair(); 
-		kp.print();
 		myStage.show();
 	}
 	
@@ -45,6 +44,12 @@ public class SplashScreen {
 		KeyGenerationModel kgmodel = new KeyGenerationModel(); 
 		kgmodel.initializeView();
 		myStage.close(); 
+	}
+	
+	private void encrypt(){
+		EncryptionModel encmodel = new EncryptionModel();
+		encmodel.initializeView();
+		myStage.close();
 	}
 	
 }

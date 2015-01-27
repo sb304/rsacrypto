@@ -5,6 +5,7 @@ public class KeyGenerationModel {
 	private KeyGenerationView myView; 
 	private KeyGenerator myKeyGenerator; 
 	
+	
 	public KeyGenerationModel(){
 		myView = new KeyGenerationView(this);
 		myKeyGenerator = new KeyGenerator(); 
@@ -14,5 +15,10 @@ public class KeyGenerationModel {
 	
 	public void initializeView(){
 		myView.initialize(); 
+	}
+	
+	public void generate(){
+		KeyPair kp = myKeyGenerator.generateKeyPair();
+		myView.pop(kp);
 	}
 }
