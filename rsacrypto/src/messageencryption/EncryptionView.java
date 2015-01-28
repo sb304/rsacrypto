@@ -28,6 +28,7 @@ public class EncryptionView {
 		myStage.setScene(myScene);
 		myStage.show(); 
 		messageField = new TextField("Enter message here");
+		
 		messageField.setOnAction(ActionEvent -> myModel.setMessage(messageField.getText()));
 		root.getChildren().add(messageField);
 	}

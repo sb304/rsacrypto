@@ -1,6 +1,7 @@
 package application;
 
 
+import messagedecryption.DecryptionModel;
 import messageencryption.EncryptionModel;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -32,6 +33,7 @@ public class SplashScreen {
 		Button encrypt = new Button("Encrypt Message");
 		encrypt.setOnAction(EventHandler -> encrypt()); 
 		Button decrypt = new Button("Decrypt Message");
+		decrypt.setOnAction(EventHandler -> decrypt());
 		vbox.getChildren().addAll(generate, encrypt, decrypt);
 		myPane.setCenter(vbox);
 	}
@@ -50,6 +52,12 @@ public class SplashScreen {
 		EncryptionModel encmodel = new EncryptionModel();
 		encmodel.initializeView();
 		myStage.close();
+	}
+	
+	private void decrypt(){
+		DecryptionModel decmodel = new DecryptionModel();
+		decmodel.initializeView();
+		myStage.close(); 
 	}
 	
 }

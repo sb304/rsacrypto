@@ -21,6 +21,7 @@ public class EncryptionModel {
 	}
 	
 	public void setMessage(String s){
+		System.out.println(s);
 		byte[] arr = new byte[s.length()];
 		for (int i=0; i<s.length(); i++){
 			char c= s.charAt(i);
@@ -34,9 +35,21 @@ public class EncryptionModel {
 	public void encrypt(String exp, String num){
 		BigInteger e = new BigInteger(exp);
 		BigInteger n = new BigInteger(num); 
-		System.out.println(1);
 		BigInteger encrypted = myMessage.modPow(e, n);
+		String output = convertInttoString(encrypted);
 		myView.pop(encrypted.toString());
+	}
+	
+	private String convertInttoString(BigInteger big){
+		byte[] iter = big.toByteArray();
+		String output = "";
+		for (int i=0; i<iter.length; i++){
+			byte b = iter[i];
+			char c = (char) b;
+			output += c; 
+		}
+		System.out.println(output);
+		return output;
 	}
 	
 }
