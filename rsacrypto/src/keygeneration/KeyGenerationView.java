@@ -4,6 +4,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -33,14 +34,19 @@ public class KeyGenerationView {
 	}
 	
 	public void pop(KeyPair kp){
-		Popup pop = new Popup(); 
-		System.out.println(1);
+		Stage pop = new Stage(); 
+		Group popRoot = new Group(); 
+		Scene popScene = new Scene(popRoot); 
+		pop.setScene(popScene);
 		VBox vbox = new VBox(); 
 		Label l1 = new Label("Your public key is: ");
 		Label l2 = new Label("Exponent " + kp.getPublicExponent());
 		vbox.getChildren().add(l1);
-		pop.getContent().add(vbox);
-		pop.show(myStage);
+		vbox.getChildren().add(l2);
+		TextField field = new TextField("Test here");
+		vbox.getChildren().add(field);
+		pop.show();
+		popRoot.getChildren().add(vbox);
 	}
 	
 }

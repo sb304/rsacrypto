@@ -19,4 +19,8 @@ public abstract class Key {
 	}
 	
 	protected abstract void findExponent();
+	
+	public BigInteger getN(){
+		return number; 
+	}
 }
